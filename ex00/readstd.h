@@ -6,12 +6,14 @@
 /*   By: mdeville <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 16:19:42 by mdeville          #+#    #+#             */
-/*   Updated: 2017/07/22 17:12:00 by atripard         ###   ########.fr       */
+/*   Updated: 2017/07/22 17:26:49 by atripard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef READSTD_H
 # define READSTD_H
+
+#include "ft_list.h"
 
 t_list 	 *readstd(void);
 
