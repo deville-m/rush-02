@@ -6,10 +6,11 @@
 /*   By: mdeville <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 16:18:31 by mdeville          #+#    #+#             */
-/*   Updated: 2017/07/22 21:54:36 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/07/22 22:33:38 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <unistd.h>
 #include "readstd.h"
 #include "ft_list.h"

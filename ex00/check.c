@@ -6,10 +6,11 @@
 /*   By: mdeville <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 21:10:15 by mdeville          #+#    #+#             */
-/*   Updated: 2017/07/22 21:38:40 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/07/22 22:38:47 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "ft_std.h"
 #include "rush_core.h"
 
