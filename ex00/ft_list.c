@@ -6,12 +6,11 @@
 /*   By: atripard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 15:59:34 by atripard          #+#    #+#             */
-/*   Updated: 2017/07/22 16:58:22 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/07/22 17:22:07 by atripard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
-#include <stdio.h>
 
 t_list		*ft_create_elem(char c)
 {
@@ -32,12 +31,10 @@ void	ft_list_push_front(t_list **begin_list, char c)
 	new = ft_create_elem(c);
 	if (begin_list == NULL)
 	{
-		printf("DBGF\n");
-		begin_list = &new;
+		*begin_list = new;
 	}
 	else
 	{
-		printf("DBG\n");
 		new->next = *begin_list;
 		*begin_list = new;
 	}
