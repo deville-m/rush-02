@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list.h                                          :+:      :+:    :+:   */
+/*   rushes.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/22 16:10:48 by mdeville          #+#    #+#             */
-/*   Updated: 2017/07/22 18:31:49 by mdeville         ###   ########.fr       */
+/*   Created: 2017/07/22 18:49:40 by mdeville          #+#    #+#             */
+/*   Updated: 2017/07/22 19:13:36 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#ifndef RUSHES_H
+# define RUSHES_H
 
-#include <stdlib.h>
+char	rush00(int i, int j, int i_max, int j_max);
+char	rush01(int i, int j, int i_max, int j_max);
+char	rush02(int i, int j, int i_max, int j_max);
+char	rush03(int i, int j, int i_max, int j_max);
+char	rush04(int i, int j, int i_max, int j_max);
 
-typedef struct		s_list
+typedef char (*rushes)(int, int, int, int);
+
+rushes			g_rushtab[] =
 {
-	struct s_list	*next;
-	char			c;
-}					t_list;
-
-void	ft_list_push_front(t_list **begin_list, char c);
-char	ft_list_pop(t_list **begin_list);
-char 	*ft_list_to_str(t_list *list);
-int		ft_list_size(t_list *begin_list);
+	rush00,
+	rush01,
+	rush02,
+	rush03,
+	rush04
+};
 
 #endif
