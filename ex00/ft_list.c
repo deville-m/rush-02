@@ -6,28 +6,22 @@
 /*   By: atripard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 15:59:34 by atripard          #+#    #+#             */
-/*   Updated: 2017/07/22 16:05:43 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/07/22 16:58:22 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-typedef struct		s_list
-{
-	struct s_list	*next;
-	char			c;
-}					t_list;
+#include "ft_list.h"
+#include <stdio.h>
 
 t_list		*ft_create_elem(char c)
 {
 	t_list		*elem;
 
 	elem = (t_list*)malloc(sizeof(t_list));
-	if (elem)
-	{
-		elem->next = NULL;
-		elem->c = c;
-	}
+	if (!elem)
+		return (NULL);
+	elem->next = NULL;
+	elem->c = c;
 	return (elem);
 }
 
@@ -36,8 +30,17 @@ void	ft_list_push_front(t_list **begin_list, char c)
 	t_list	*new;
 
 	new = ft_create_elem(c);
-	new->next = *begin_list;
-	*begin_list = new;
+	if (begin_list == NULL)
+	{
+		printf("DBGF\n");
+		begin_list = &new;
+	}
+	else
+	{
+		printf("DBG\n");
+		new->next = *begin_list;
+		*begin_list = new;
+	}
 }
 
 char	ft_list_pop(t_list **begin_list)
@@ -45,8 +48,13 @@ char	ft_list_pop(t_list **begin_list)
 	t_list *tmp;
 	char res;
 
+	if (begin_list == NULL)
+		return ('\0');
 	tmp = *begin_list;
-
+	*begin_list = (*begin_list)->next;
+	res = tmp->c;
+	free(tmp);
+	return (res);
 }
 
 int		ft_list_size(t_list *begin_list)

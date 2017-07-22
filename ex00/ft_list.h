@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   readstd.c                                          :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/22 12:53:27 by mdeville          #+#    #+#             */
-/*   Updated: 2017/07/22 16:56:22 by mdeville         ###   ########.fr       */
+/*   Created: 2017/07/22 16:10:48 by mdeville          #+#    #+#             */
+/*   Updated: 2017/07/22 16:14:27 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include "ft_list.h"
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
-void	ft_putchar(char c)
+#include <stdlib.h>
+
+typedef struct		s_list
 {
-	write(1, &c, 1);
-}
+	struct s_list	*next;
+	char			c;
+}					t_list;
 
-t_list	**readstd(void)
-{
-	t_list	**begin;
-	char c;
+void	ft_list_push_front(t_list **begin_list, char c);
+char	ft_list_pop(t_list **begin_list);
+int		ft_list_size(t_list *begin_list);
 
-	begin = NULL;
-	while (read(0, &c, 1) > 0)
-	{
-		ft_list_push_front(begin, c);
-		printf("%c\n", (*begin)->c);
-	}
-	return (begin);
-}
+#endif
