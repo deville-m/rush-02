@@ -6,7 +6,7 @@
 /*   By: atripard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 15:59:34 by atripard          #+#    #+#             */
-/*   Updated: 2017/07/22 17:22:07 by atripard         ###   ########.fr       */
+/*   Updated: 2017/07/22 18:21:26 by atripard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,25 @@ void	ft_list_push_front(t_list **begin_list, char c)
 		new->next = *begin_list;
 		*begin_list = new;
 	}
+}
+
+char 	*ft_list_to_str(t_list *list)
+{
+	int 	size;
+	int 	i;
+	char 	*res;
+
+	size = ft_list_size(list);
+	res = (char *)malloc(sizeof(char) * (size + 1));
+
+	i = size - 1;
+	while (i >= 0)
+	{
+		res[i] = ft_list_pop(&list);
+		i--;
+	}
+	res[size] = '\0';
+	return (res);
 }
 
 char	ft_list_pop(t_list **begin_list)

@@ -6,7 +6,7 @@
 /*   By: mdeville <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 16:10:48 by mdeville          #+#    #+#             */
-/*   Updated: 2017/07/22 16:14:27 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/07/22 18:22:50 by atripard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct		s_list
 
 void	ft_list_push_front(t_list **begin_list, char c);
 char	ft_list_pop(t_list **begin_list);
+char 	*ft_list_to_str(t_list *list);
 int		ft_list_size(t_list *begin_list);
 
 #endif
