@@ -6,7 +6,7 @@
 /*   By: mdeville <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 12:53:27 by mdeville          #+#    #+#             */
-/*   Updated: 2017/07/22 17:38:58 by atripard         ###   ########.fr       */
+/*   Updated: 2017/07/22 20:04:23 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 t_list	*readstd(void)
 {
 	t_list	*begin;
-	char c;
+	char	c;
 
 	begin = NULL;
 	while (read(0, &c, 1) > 0)

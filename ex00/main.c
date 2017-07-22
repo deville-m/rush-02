@@ -6,7 +6,7 @@
 /*   By: mdeville <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 16:18:31 by mdeville          #+#    #+#             */
-/*   Updated: 2017/07/22 19:17:13 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/07/22 20:26:06 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int		main(void)
 
 	list = readstd();
 	str = ft_list_to_str(list);
-	printf("%s", rush_core(5, 5, 0));
+//	printf("%s", str);
+	printf("%s", rush_core(0, 5, 2));
 	return (0);
 }

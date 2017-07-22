@@ -6,15 +6,15 @@
 /*   By: mdeville <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 16:19:42 by mdeville          #+#    #+#             */
-/*   Updated: 2017/07/22 17:26:49 by atripard         ###   ########.fr       */
+/*   Updated: 2017/07/22 20:04:48 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef READSTD_H
 # define READSTD_H
 
-#include "ft_list.h"
+# include "ft_list.h"
 
-t_list 	 *readstd(void);
+t_list	*readstd(void);
 
 #endif

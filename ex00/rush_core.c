@@ -6,7 +6,7 @@
 /*   By: mdeville <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 18:36:55 by mdeville          #+#    #+#             */
-/*   Updated: 2017/07/22 19:33:17 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/07/22 20:22:42 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,27 @@
 #include "rushes.h"
 #include <stdio.h>
 
+void	ft_swap(int *a, int *b)
+{
+	int tmp;
+
+	tmp = *a;
+	*a = *b - 1;
+	*b = tmp - 1;
+}
+
 char	*rush_core(int x, int y, int index_rush)
 {
-	int	i;
-	int	j;
-	int mem;
-	unsigned int len;
-	char *tab;
+	int				i;
+	int				j;
+	unsigned int	len;
+	char			*tab;
 
 	tab = (char *)malloc(sizeof(char) * ((x + 1) * y + 1));
 	len = x + 1;
 	if (x > 0 && y > 0)
 	{
-		mem = y - 1;
-		y = x - 1;
-		x = mem;
+		ft_swap(&x, &y);
 		i = 0;
 		while (i <= x)
 		{

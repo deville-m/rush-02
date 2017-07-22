@@ -6,13 +6,13 @@
 /*   By: atripard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 15:59:34 by atripard          #+#    #+#             */
-/*   Updated: 2017/07/22 18:21:26 by atripard         ###   ########.fr       */
+/*   Updated: 2017/07/22 20:03:30 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list		*ft_create_elem(char c)
+t_list	*ft_create_elem(char c)
 {
 	t_list		*elem;
 
@@ -40,15 +40,14 @@ void	ft_list_push_front(t_list **begin_list, char c)
 	}
 }
 
-char 	*ft_list_to_str(t_list *list)
+char	*ft_list_to_str(t_list *list)
 {
-	int 	size;
-	int 	i;
-	char 	*res;
+	int		size;
+	int		i;
+	char	*res;
 
 	size = ft_list_size(list);
 	res = (char *)malloc(sizeof(char) * (size + 1));
-
 	i = size - 1;
 	while (i >= 0)
 	{
@@ -61,8 +60,8 @@ char 	*ft_list_to_str(t_list *list)
 
 char	ft_list_pop(t_list **begin_list)
 {
-	t_list *tmp;
-	char res;
+	t_list	*tmp;
+	char	res;
 
 	if (begin_list == NULL)
 		return ('\0');
