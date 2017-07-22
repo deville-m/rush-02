@@ -6,14 +6,14 @@
 #    By: mdeville <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/19 12:24:24 by mdeville          #+#    #+#              #
-#    Updated: 2017/07/22 20:17:59 by mdeville         ###   ########.fr        #
+#    Updated: 2017/07/22 21:38:19 by mdeville         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = colle-2
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-SRC = ft_list.c ft_std.c main.c readstd.c rush_core.c rushes.c
+SRC = ft_list.c ft_std.c main.c readstd.c rush_core.c rushes.c check.c
 
 all: $(NAME)
 

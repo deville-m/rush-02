@@ -6,7 +6,7 @@
 /*   By: atripard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 15:59:34 by atripard          #+#    #+#             */
-/*   Updated: 2017/07/22 20:03:30 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/07/22 21:51:39 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,12 @@ char	*ft_list_to_str(t_list *list)
 	int		i;
 	char	*res;
 
+	if (list == NULL || list->c == '\0')
+		return (NULL);
 	size = ft_list_size(list);
 	res = (char *)malloc(sizeof(char) * (size + 1));
+	if (res == NULL)
+		return (NULL);
 	i = size - 1;
 	while (i >= 0)
 	{

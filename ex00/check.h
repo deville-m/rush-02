@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/22 16:18:31 by mdeville          #+#    #+#             */
-/*   Updated: 2017/07/22 21:54:36 by mdeville         ###   ########.fr       */
+/*   Created: 2017/07/22 21:33:26 by mdeville          #+#    #+#             */
+/*   Updated: 2017/07/22 21:34:28 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "readstd.h"
-#include "ft_list.h"
-#include "check.h"
+#ifndef CHECK_H
+# define CHECK_H
 
-int		main(void)
-{
-	t_list	*list;
-	char	*str;
+void	print_match(char *str);
 
-	list = readstd();
-	str = ft_list_to_str(list);
-	if (str == 0)
-	{
-		write(1, "aucune\n", 7);
-		return (0);
-	}
-	print_match(str);
-	return (0);
-}
+#endif
