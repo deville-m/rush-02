@@ -6,7 +6,7 @@
 /*   By: mdeville <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 18:36:55 by mdeville          #+#    #+#             */
-/*   Updated: 2017/07/23 09:43:46 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/07/23 13:16:53 by atripard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ char	*rush_core(int x, int y, int index_rush)
 	int				len;
 	char			*tab;
 
-	tab = (char *)malloc(sizeof(char) * ((x + 1) * y + 1));
+	if (!(tab = (char *)malloc(sizeof(char) * ((x + 1) * y + 1))))
+		return (NULL);
 	len = x + 1;
 	i = 0;
 	if (x > 0 && y > 0)
@@ -43,8 +44,7 @@ char	*rush_core(int x, int y, int index_rush)
 				tab[i * len + j] = g_rushtab[index_rush](i, j, x, y);
 				j++;
 			}
-			tab[i * len + j] = '\n';
-			i++;
+			tab[i++ * len + j] = '\n';
 		}
 	}
 	tab[i * len] = '\0';
