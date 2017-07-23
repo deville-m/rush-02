@@ -6,12 +6,13 @@
 /*   By: mdeville <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 21:10:15 by mdeville          #+#    #+#             */
-/*   Updated: 2017/07/23 09:44:10 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/07/23 22:39:38 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_std.h"
 #include "rush_core.h"
+#include <stdlib.h>
 
 int		get_x(const char *str)
 {
@@ -50,12 +51,21 @@ void	print_colle(int i, int x, int y)
 	ft_putchar(']');
 }
 
+void	norm_is_stupid_sometimes(int i, int x, int y, int *nbcolle)
+{
+	if (*nbcolle)
+		ft_putstr(" || ");
+	print_colle(i, x, y);
+	(*nbcolle) = (*nbcolle) + 1;
+}
+
 void	print_match(char *str)
 {
 	int		x;
 	int		y;
 	int		i;
 	int		nbcolle;
+	char	*tab;
 
 	x = get_x(str);
 	y = get_y(str);
@@ -65,13 +75,12 @@ void	print_match(char *str)
 		return ;
 	while (i < 5)
 	{
-		if (ft_strcmp(rush_core(x, y, i), str) == 0)
+		tab = rush_core(x, y, i);
+		if (ft_strcmp(tab, str) == 0)
 		{
-			if (nbcolle)
-				ft_putstr(" || ");
-			print_colle(i, x, y);
-			nbcolle++;
+			norm_is_stupid_sometimes(i, x, y, &nbcolle);
 		}
+		free(tab);
 		i++;
 	}
 	if (nbcolle == 0)

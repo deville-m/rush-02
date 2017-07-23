@@ -6,7 +6,7 @@
 /*   By: mdeville <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 16:18:31 by mdeville          #+#    #+#             */
-/*   Updated: 2017/07/23 09:43:36 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/07/23 22:40:44 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int		main(void)
 		return (0);
 	}
 	print_match(str);
+	free(str);
 	return (0);
 }
