@@ -6,13 +6,12 @@
 /*   By: mdeville <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/22 18:36:55 by mdeville          #+#    #+#             */
-/*   Updated: 2017/07/23 09:22:26 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/07/23 09:43:46 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "rushes.h"
-#include <stdio.h>
 
 void	ft_swap(int *a, int *b)
 {
